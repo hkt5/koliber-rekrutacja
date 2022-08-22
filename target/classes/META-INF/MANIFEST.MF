@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+asseco.Main-Class: asseco.Main
+

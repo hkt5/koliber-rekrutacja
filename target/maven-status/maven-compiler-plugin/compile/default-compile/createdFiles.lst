@@ -1,0 +1,12 @@
+Main.class
+asseco\builders\InvoiceBuilder.class
+asseco\annotations\KoliberDescription.class
+asseco\models\Address.class
+asseco\models\Invoice.class
+asseco\models\Contractor.class
+asseco\models\Currency.class
+asseco\builders\CurrencyBuilder.class
+asseco\builders\JsonBuilder.class
+asseco\builders\AddressBuilder.class
+asseco\annotations\KoliberFieldDescription.class
+asseco\builders\ContractorBuilder.class
