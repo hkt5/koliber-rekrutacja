@@ -7,73 +7,77 @@ import com.silenceonthewire.asseco.models.Currency;
 import com.silenceonthewire.asseco.models.Invoice;
 
 import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
 
 public class KoliberService {
 
     public void printData() throws NoSuchFieldException {
-        Map<String, Object> invoicesMap = getData();
-        invoicesMap.forEach((key, value) -> {
-            if(!key.equals("contractor_data") && !key.equals("contractor_address") && !key.equals("currency_data")) {
-                System.out.println(key + "-" + value);
-            }
-            if("currency".equals(key)) {
-                Map<String, Object> currency_data = (Map<String, Object>) invoicesMap.get("currency_data");
-                currency_data.forEach((currency_key, currency_value) -> {
-                    System.out.println("\t" + currency_key + "-" + currency_value);
-                });
-            }
-            if("contractor".equals(key)) {
-                Map<String, Object> contractor_data = (Map<String, Object>) invoicesMap.get("contractor_data");
-                contractor_data.forEach((contractor_key, contractor_value) -> {
-                    System.out.println("\t" + contractor_key + "-" + contractor_value);
-                    if("address".equals(contractor_key)){
-                        Map<String, Object> contractor_address = (Map<String, Object>) invoicesMap.get("contractor_address");
-                        contractor_address.forEach((address_key, address_value) -> {
-                            System.out.println("\t\t" + address_key + "-" + address_value);
-                        });
-                    }
-                });
-            }
-        });
+        printCurrency();
+        printCurrencyCode();
+        printAmount();
+        printContractor();
+        printContractorData();
+        printAddressData();
+        printNumber();
     }
 
-    private Map<String, Object> getData() {
-        Map<String, Object> invoicesMap = new HashMap<>();
-
-        Class<?> type = Invoice.class;
-        Field[] fields = type.getDeclaredFields();
-        for (Field currentField: fields) {
-            sotwareDecisionForFieldName(invoicesMap, currentField);
-        }
-        return invoicesMap;
+    private void printCurrency() throws NoSuchFieldException {
+        Class<Invoice> invoiceClass = Invoice.class;
+        Field currencyField = invoiceClass.getDeclaredField("currency");
+        KoliberFieldDescription koliberFieldDescription = currencyField.getAnnotation(KoliberFieldDescription.class);
+        System.out.println(currencyField.getName() +" - "+ koliberFieldDescription.comment());
     }
 
-    private void sotwareDecisionForFieldName(Map<String, Object> invoicesMap, Field currentField) {
-        if ("contractor".equals(currentField.getName())) {
-            KoliberFieldDescription koliberFieldDescription = currentField.getAnnotation(KoliberFieldDescription.class);
-            invoicesMap.put(currentField.getName(), koliberFieldDescription.comment());
-            invoicesMap.put("contractor_data", check(Contractor.class));
-            invoicesMap.put("contractor_address", check(Address.class));
-        } else if ("currency".equals(currentField.getName())){
-            KoliberFieldDescription koliberFieldDescription = currentField.getAnnotation(KoliberFieldDescription.class);
-            invoicesMap.put(currentField.getName(), koliberFieldDescription.comment());
-            invoicesMap.put("currency_data", check(Currency.class));
-        } else {
-            KoliberFieldDescription koliberFieldDescription = currentField.getAnnotation(KoliberFieldDescription.class);
-            invoicesMap.put(currentField.getName(), koliberFieldDescription.comment());
-        }
+    private void printCurrencyCode() throws  NoSuchFieldException {
+        Class<Currency> currencyClass = Currency.class;
+        Field codeField = currencyClass.getDeclaredField("code");
+        KoliberFieldDescription koliberFieldDescription = codeField.getAnnotation(KoliberFieldDescription.class);
+        System.out.println("\t" + codeField.getName() +" - "+ koliberFieldDescription.comment());
     }
 
-    public Map<String, String> check(Class<?> type) {
-        Map<String, String> fieldsMap = new HashMap<>();
-        Field[] fields = type.getDeclaredFields();
-        for (Field currentField: fields) {
-            KoliberFieldDescription koliberFieldDescription = currentField.getAnnotation(KoliberFieldDescription.class);
-            fieldsMap.put(Optional.of(currentField.getName()).orElse("Invoice"), koliberFieldDescription.comment());
-        }
-        return fieldsMap;
+    private void printAmount() throws NoSuchFieldException {
+        Class<Invoice> invoiceClass = Invoice.class;
+        Field currencyField = invoiceClass.getDeclaredField("amount");
+        KoliberFieldDescription koliberFieldDescription = currencyField.getAnnotation(KoliberFieldDescription.class);
+        System.out.println(currencyField.getName() +" - "+ koliberFieldDescription.comment());
+    }
+
+    private void printContractor() throws NoSuchFieldException {
+        Class<Invoice> invoiceClass = Invoice.class;
+        Field currencyField = invoiceClass.getDeclaredField("contractor");
+        KoliberFieldDescription koliberFieldDescription = currencyField.getAnnotation(KoliberFieldDescription.class);
+        System.out.println(currencyField.getName() +" - "+ koliberFieldDescription.comment());
+    }
+
+    private void printContractorData() throws NoSuchFieldException {
+        Class<Contractor> contractorClass = Contractor.class;
+        getContractorField(contractorClass, "name");
+        getContractorField(contractorClass, "nip");
+        getContractorField(contractorClass, "address");
+    }
+
+    private void printAddressData() throws NoSuchFieldException {
+        Class<Address> addressClass = Address.class;
+        getAddressField(addressClass, "city");
+        getAddressField(addressClass, "postalCode");
+        getAddressField(addressClass, "street");
+    }
+
+    private void printNumber() throws NoSuchFieldException {
+        Class<Invoice> invoiceClass = Invoice.class;
+        Field currencyField = invoiceClass.getDeclaredField("number");
+        KoliberFieldDescription koliberFieldDescription = currencyField.getAnnotation(KoliberFieldDescription.class);
+        System.out.println(currencyField.getName() +" - "+ koliberFieldDescription.comment());
+    }
+
+    private void getContractorField(Class<Contractor> contractorClass, String name) throws NoSuchFieldException {
+        Field currencyField = contractorClass.getDeclaredField(name);
+        KoliberFieldDescription koliberFieldDescription = currencyField.getAnnotation(KoliberFieldDescription.class);
+        System.out.println("\t" + currencyField.getName() +" - "+ koliberFieldDescription.comment());
+    }
+
+    private void getAddressField(Class<Address> addressClass, String name) throws NoSuchFieldException {
+        Field currencyField = addressClass.getDeclaredField(name);
+        KoliberFieldDescription koliberFieldDescription = currencyField.getAnnotation(KoliberFieldDescription.class);
+        System.out.println("\t\t" + currencyField.getName() +" - "+ koliberFieldDescription.comment());
     }
 }

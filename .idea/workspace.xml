@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee064240-4cba-44a1-9252-af815cf506c1" name="Changes" comment="" />
+    <list default="true" id="ee064240-4cba-44a1-9252-af815cf506c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/KoliberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/KoliberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/silenceonthewire/asseco/services/KoliberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/silenceonthewire/asseco/services/KoliberService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +151,8 @@
       <updated>1661080133242</updated>
       <workItem from="1661080134467" duration="6285000" />
       <workItem from="1661100812201" duration="2042000" />
-      <workItem from="1661155988683" duration="10852000" />
+      <workItem from="1661155988683" duration="13571000" />
+      <workItem from="1661241849947" duration="1863000" />
     </task>
     <servers />
   </component>
@@ -161,6 +166,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/Main.java</url>
           <line>11</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/KoliberService.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
