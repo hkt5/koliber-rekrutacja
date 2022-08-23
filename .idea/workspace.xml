@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee064240-4cba-44a1-9252-af815cf506c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ee064240-4cba-44a1-9252-af815cf506c1" name="Changes" comment="update methods">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/AddressDataPrintable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/AddressFieldGetable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/AmountPrintable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/ContractorFieldGetable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/ContractorPrintable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/CurrencyCodePrintable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/CurrencyPrintable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/DataPrintable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/NumberPrintable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/KoliberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/KoliberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/silenceonthewire/asseco/services/KoliberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/silenceonthewire/asseco/services/KoliberService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +27,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -152,12 +165,35 @@
       <workItem from="1661080134467" duration="6285000" />
       <workItem from="1661100812201" duration="2042000" />
       <workItem from="1661155988683" duration="13571000" />
-      <workItem from="1661241849947" duration="1863000" />
+      <workItem from="1661241849947" duration="2695000" />
     </task>
+    <task id="LOCAL-00001" summary="update methods">
+      <created>1661244911072</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661244911072</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="update methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -169,7 +205,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/silenceonthewire/asseco/services/KoliberService.java</url>
-          <line>63</line>
+          <line>62</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
